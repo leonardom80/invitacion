@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis 15 Años - Gold & Glitter Edition</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <div class="starfield">
+        <div class="meteor m1"></div>
+        <div class="meteor m2"></div>
+        <div class="meteor m3"></div>
+        <div class="meteor m4"></div>
+        <div class="meteor m5"></div>
+        <div class="meteor m6"></div>
+        <div class="meteor m7"></div>
+        <div class="meteor m8"></div>
+        <div class="meteor m9"></div>
+        <div class="meteor m10"></div>
+    </div>
+
+    <audio id="musica-fondo" loop>
+        <source src="MabelleEvangeline.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <div class="container">
+        
+        <header>
+            <h1>Mis 15 Años</h1>
+        </header>
+        
+        <div class="photo-placeholder">
+            <p>[ Coloca aquí la foto de la Quinceañera ]</p>
+        </div>
+
+        <p class="frase"><em>"Un día lleno de ilusiones, el comienzo de una nueva etapa que deseo compartir con las personas que más quiero."</em></p>
+
+        <h2>Detalles de la Celebración</h2>
+        
+        <table class="info-table">
+            <tr>
+                <td class="label">📅 Fecha</td>
+                <td class="value">25 de julio de 2026</td>
+            </tr>
+            <tr>
+                <td class="label">🕖 Hora</td>
+                <td class="value">7:00 p.m.</td>
+            </tr>
+            <tr>
+                <td class="label">📍 Lugar</td>
+                <td class="value">
+                    <strong>Salón de Eventos OPA!</strong><br>
+                    (Antiguo Salamandra Music Hall)<br>
+                    Ak. 15 #102-45, Bogotá<br><br>
+                    <a href="https://maps.google.com/?q=Ak.+15+%23102-45,+Bogotá" target="_blank" class="btn">Ver Mapa en Google Maps</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">🚗 Parqueadero</td>
+                <td class="value">Contamos con convenio de parqueadero en <strong>Parkin Calle 85</strong>.<br><br><span class="highlight-text">Tarifa especial:</span> $30.000 por vehículo.<br>El servicio estará disponible hasta la finalización del evento.</td>
+            </tr>
+            <tr>
+                <td class="label">✨ Dress Code</td>
+                <td class="value">
+                    <strong>Cóctel Elegante</strong><br>
+                    Vestido corto o largo para las damas y traje formal para los caballeros.<br><br>
+                    <span class="alert-text">Color reservado: Dorado ✨</span><br>Agradecemos evitar este color, ya que será el elegido por la quinceañera para esta noche tan especial.
+                </td>
+            </tr>
+            <tr>
+                <td class="label">🎁 Obsequios</td>
+                <td class="value">Tu presencia será el mejor regalo. Sin embargo, si deseas tener un detalle conmigo, serán bienvenidos tanto los regalos como la tradicional <strong>lluvia de sobres</strong>.</td>
+            </tr>
+        </table>
+
+        <h2>Confirmación de Asistencia</h2>
+        <div class="confirmacion-section">
+            <p>Tu presencia es muy importante para nosotros. Por favor confirma tu asistencia antes del <strong>___ de ______ de 2026</strong> e indica el número exacto de personas que te acompañarán, para poder preparar cada detalle de esta celebración.</p>
+            <p class="nota"><em>* Por favor, confirma por cada invitado que asistirá, ya sea familiar, acompañante o menor de edad.</em></p>
+            
+            <p><a href="#" target="_blank" class="btn btn-confirmar">Confirmar Asistencia Aquí</a></p>
+        </div>
+
+    </div>
+
+    <script>
+        var audio = document.getElementById('musica-fondo');
+        var yaInteractuo = false; 
+
+        function activarAudioAutomatico() {
+            if (yaInteractuo) return; 
+
+            audio.play().then(() => {
+                yaInteractuo = true;
+                removerEventos(); 
+            }).catch(error => {
+                console.log("Esperando un movimiento para reproducir...");
+            });
+        }
+
+        window.addEventListener('scroll', activarAudioAutomatico);
+        window.addEventListener('touchstart', activarAudioAutomatico); 
+        document.body.addEventListener('click', activarAudioAutomatico);
+        window.addEventListener('mousemove', activarAudioAutomatico);
+
+        function removerEventos() {
+            window.removeEventListener('scroll', activarAudioAutomatico);
+            window.removeEventListener('touchstart', activarAudioAutomatico);
+            document.body.removeEventListener('click', activarAudioAutomatico);
+            window.removeEventListener('mousemove', activarAudioAutomatico);
+        }
+    </script>
+
+</body>
+</html>
