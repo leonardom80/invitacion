@@ -8,6 +8,7 @@
 </head>
 <body>
 
+    <!-- Contenedor de la lluvia de estrellas vertical animada -->
     <div class="starfield">
         <div class="meteor m1"></div>
         <div class="meteor m2"></div>
@@ -21,6 +22,7 @@
         <div class="meteor m10"></div>
     </div>
 
+    <!-- Elemento de audio nativo de HTML5 apuntando a tu archivo local -->
     <audio id="musica-fondo" loop>
         <source src="MabelleEvangeline.mp3" type="audio/mpeg">
         Tu navegador no soporta el elemento de audio.
@@ -32,8 +34,9 @@
             <h1>Mis 15 Años</h1>
         </header>
         
-        <div class="photo-placeholder">
-            <p>[ Coloca aquí la foto de la Quinceañera ]</p>
+        <!-- NUEVO: Contenedor con la foto de ejemplo incorporada -->
+        <div class="photo-container">
+            <img src="https://images.unsplash.com/photo-1592840096694-966ff6c0d76f?q=80&w=600&auto=format&fit=crop" alt="Quinceañera con vestido rosado pastel" class="photo-quinceanera">
         </div>
 
         <p class="frase"><em>"Un día lleno de ilusiones, el comienzo de una nueva etapa que deseo compartir con las personas que más quiero."</em></p>
@@ -86,6 +89,7 @@
 
     </div>
 
+    <!-- Script de activación por interacción física -->
     <script>
         var audio = document.getElementById('musica-fondo');
         var yaInteractuo = false; 
