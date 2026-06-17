@@ -28,7 +28,7 @@
         Tu navegador no soporta el elemento de audio.
     </audio>
 
-    <!-- REHABILITADO: Botón flotante interactivo para el control del invitado -->
+    <!-- Botón flotante interactivo para el control del invitado -->
     <div class="music-control" id="btn-musica" onclick="controlarMusica()">
         <span id="icono-musica">🎵 Activar Música</span>
     </div>
@@ -39,9 +39,9 @@
             <h1>Mis 15 Años</h1>
         </header>
         
-        <!-- Foto de ejemplo de la Quinceañera -->
+        <!-- ACTUALIZADO: Foto de la Quinceañera con su nombre exacto: foto.png -->
         <div class="photo-container">
-            <img src="https://images.unsplash.com/photo-1592840096694-966ff6c0d76f?q=80&w=600&auto=format&fit=crop" alt="Quinceañera con vestido rosado pastel" class="photo-quinceanera">
+            <img src="foto.png" alt="Quinceañera" class="photo-quinceanera">
         </div>
 
         <p class="frase"><em>"Un día lleno de ilusiones, el comienzo de una nueva etapa que deseo compartir con las personas que más quiero."</em></p>
@@ -94,7 +94,7 @@
 
     </div>
 
-    <!-- Script híbrido: Activa automáticamente por interacción física O mediante el botón -->
+    <!-- Script de control de audio automático e interactivo -->
     <script>
         var audio = document.getElementById('musica-fondo');
         var icono = document.getElementById('icono-musica');
@@ -110,11 +110,10 @@
                 yaInteractuo = true;
                 removerEventos(); 
             }).catch(error => {
-                console.log("Esperando una interacción del usuario para reproducir audio...");
+                console.log("Esperando interacción para reproducir audio...");
             });
         }
 
-        // Eventos automáticos en segundo plano
         window.addEventListener('scroll', activarAudioAutomatico);
         window.addEventListener('touchstart', activarAudioAutomatico); 
         document.body.addEventListener('click', activarAudioAutomatico);
@@ -127,7 +126,6 @@
             window.removeEventListener('mousemove', activarAudioAutomatico);
         }
 
-        // Control manual por si el invitado presiona directamente el botón flotante
         function controlarMusica() {
             yaInteractuo = true; 
             removerEventos();
