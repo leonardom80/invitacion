@@ -1,55 +1,30 @@
-/* --- DISEÑO BASE --- */
+/* 1. Declaración robusta de la fuente para entornos locales */
+@font-face {
+    font-family: 'Didact Gothic';
+    src: url('./Didact_Gothic/DidactGothic-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 2. Forzado global con tipografía de respaldo idéntica */
+* {
+    font-family: 'Didact Gothic', 'Century Gothic', 'AppleGothic', sans-serif !important;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: radial-gradient(circle, #fdf6c7 0%, #e6c66d 60%, #bfa043 100%);
-    color: #1a1a1a;
+    background: radial-gradient(circle, #fffdf0 0%, #f7ecc2 60%, #dec273 100%);
+    color: #4a3e21; 
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.8;
     overflow-x: hidden;
     position: relative;
     min-height: 100vh;
 }
 
-/* --- BOTÓN FLOTANTE DE CONTROL DE MÚSICA --- */
-.music-control {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: rgba(15, 15, 15, 0.95);
-    color: #ebd083;
-    padding: 12px 20px;
-    border-radius: 30px;
-    border: 2px solid #ffffff;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-    z-index: 100;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(235, 208, 131, 0.3);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.music-control:hover {
-    transform: scale(1.05) translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.5);
-    color: #ffffff;
-}
-
-.music-control.playing {
-    animation: pulsoMusica 2s infinite ease-in-out;
-    background: rgba(25, 25, 25, 0.95);
-    border-color: #ebd083;
-}
-
-@keyframes pulsoMusica {
-    0%, 100% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 5px rgba(235, 208, 131, 0.4); }
-    50% { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 20px rgba(235, 208, 131, 0.8); }
-}
-
-/* --- EFECTO: TORMENTA DE ESTRELLAS CAYENDO VERTICALMENTE --- */
+/* --- ESTRELLAS DESTELLANTES (DORADO SUTIL) --- */
 .starfield {
     position: fixed;
     top: 0;
@@ -63,206 +38,489 @@ body {
 .meteor {
     position: absolute;
     top: -150px;
-    width: 3px;
-    height: 120px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 60%, rgba(255, 255, 255, 1) 100%);
+    width: 1.5px;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(222, 194, 115, 0) 0%, rgba(222, 194, 115, 0.5) 100%);
     animation: caidaVertical linear infinite;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));
 }
 
-.meteor::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 6px;
-    height: 6px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    box-shadow: 0 0 14px #ffffff, 0 0 6px #ffffff;
-}
-
-.m1  { left: 7%;  animation-duration: 3.2s; animation-delay: 0s;   height: 130px; }
-.m2  { left: 18%; animation-duration: 2.0s; animation-delay: 1.0s; height: 95px;  width: 2px; }
-.m3  { left: 29%; animation-duration: 3.8s; animation-delay: 0.4s; height: 150px; }
-.m4  { left: 41%; animation-duration: 2.5s; animation-delay: 2.0s; height: 110px; }
-.m5  { left: 50%; animation-duration: 3.0s; animation-delay: 0.1s; height: 125px; width: 4px; }
-.m6  { left: 61%; animation-duration: 2.2s; animation-delay: 1.5s; height: 100px; }
-.m7  { left: 73%; animation-duration: 3.5s; animation-delay: 0.8s; height: 140px; }
-.m8  { left: 82%; animation-duration: 1.9s; animation-delay: 2.5s; height: 85px;  width: 2px; }
-.m9  { left: 89%; animation-duration: 4.2s; animation-delay: 1.3s; height: 160px; }
-.m10 { left: 95%; animation-duration: 2.8s; animation-delay: 0.6s; height: 120px; }
+.m1 { left: 10%; animation-duration: 4.2s; animation-delay: 0s; }
+.m2 { left: 25%; animation-duration: 3.0s; animation-delay: 1.2s; }
+.m3 { left: 40%; animation-duration: 5.1s; animation-delay: 0.5s; }
+.m4 { left: 55%; animation-duration: 3.5s; animation-delay: 2.2s; }
+.m5 { left: 70%; animation-duration: 4.6s; animation-delay: 0.1s; }
+.m6 { left: 85%; animation-duration: 3.2s; animation-delay: 1.7s; }
 
 @keyframes caidaVertical {
     0% { transform: translateY(0); opacity: 0; }
-    15% { opacity: 1; }
-    85% { opacity: 1; }
-    100% { transform: translateY(115vh); opacity: 0; }
+    20% { opacity: 0.6; }
+    80% { opacity: 0.6; }
+    100% { transform: translateY(110vh); opacity: 0; }
 }
 
-/* --- ACTUALIZADO: CONTENEDOR PRINCIPAL MÁS SALIENTE (Efecto Elevado Avanzado) --- */
+/* --- ACTUALIZADO: CONTENEDOR CON FONDO DORADO PREMIUM --- */
 .container {
     position: relative;
     z-index: 1;
-    max-width: 700px;
-    margin: 50px auto;
-    padding: 35px;
-    background: rgba(12, 12, 12, 0.96); /* Un poco más oscuro para potenciar el contraste */
-    color: #f5f5f5;
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 40px 30px;
     
-    /* Borde doble con reflejo blanco superior que simula cristal 3D */
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    outline: 2px solid rgba(235, 208, 131, 0.4); 
-    border-radius: 20px;
+    /* Reemplazado el fondo blanco por un degradado dorado oro/champán texturizado */
+    background: linear-gradient(135deg, #fffcf0 0%, #f7e9b8 50%, #e6cb7e 100%);
     
-    /* Sombreado multinivel mas denso y profundo para el efecto saliente */
-    box-shadow: 
-        0 20px 50px rgba(0, 0, 0, 0.8), 
-        0 0 40px rgba(235, 208, 131, 0.2),
-        inset 0 1px 3px rgba(255, 255, 255, 0.3); 
-        
-    transform: translateY(-2px); /* Pequeña elevación física en el espacio */
+    border-radius: 0px; 
+    box-shadow: 0 20px 50px rgba(74, 62, 33, 0.25);
+    border: 1px solid #cfa844;
+    outline: 12px solid rgba(255, 255, 255, 0.5); 
+    text-align: center;
+}
+
+/* --- CABECERA Y TÍTULOS --- */
+header {
+    margin-bottom: 25px;
+}
+
+.subtitulo {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #8c6f19;
+    margin-bottom: 5px;
 }
 
 header h1 {
-    font-size: 42px;
-    font-weight: 300;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+    font-size: 38px;
+    font-weight: normal;
+    margin: 0;
     letter-spacing: 4px;
-    text-align: center;
-    background: linear-gradient(45deg, #ffe89e, #fcf6ba, #e6c66d, #ffffff);
+    text-transform: uppercase;
+    color: #332b14;
+    background: linear-gradient(135deg, #7a5e13 0%, #b89535 50%, #7a5e13 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 h2 {
-    font-size: 20px;
-    color: #ebd083;
-    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: normal;
     letter-spacing: 2px;
-    margin-top: 45px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #443a1c;
-    padding-bottom: 8px;
+    color: #7a5e13;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+/* --- ACTUALIZADO: CONTENEDOR Y BOTÓN "ESCUCHA MI CANCIÓN" ENCIMA DE LA FOTO --- */
+.music-container-block {
+    margin: 25px 0;
     text-align: center;
+    position: relative;
 }
 
-/* CONTENEDOR CONFIGURADO PARA foto.png */
-.photo-container {
-    width: 100%;
-    max-width: 550px; 
-    margin: 30px auto;
-    border: 2px solid #ebd083;
-    border-radius: 12px;
+.music-control-princess {
+    background: linear-gradient(135deg, #efe2ba 0%, #ffffff 50%, #e0ce96 100%);
+    color: #4a3e21;
+    /* Silueta curva y estilizada de fantasía */
+    border-radius: 20px 4px 20px 4px; 
+    border: 1px solid #b89535;
+    /* Doble línea decorativa que simula joyería */
+    outline: 3px double #b89535;
+    outline-offset: -6px;
+    padding: 12px 32px;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
     overflow: hidden;
-    box-shadow: 0 0 30px rgba(235, 208, 131, 0.4), 0 10px 25px rgba(0,0,0,0.7);
-    background-color: #000000;
+    box-shadow: 0 6px 20px rgba(184, 149, 53, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.photo-quinceanera {
+/* Iconos de destellos laterales */
+.tiara-icon {
+    font-size: 12px;
+    color: #a6821c;
+    animation: pulsoDestello 2s infinite ease-in-out;
+}
+
+/* Efecto mágico de resplandor de fondo */
+.princess-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    animation: destelloMagico 4s infinite linear;
+}
+
+/* Animaciones de fantasía */
+@keyframes destelloMagico {
+    0% { left: -100%; }
+    30% { left: 150%; }
+    100% { left: 150%; }
+}
+
+@keyframes pulsoDestello {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.3); opacity: 1; color: #7a5e13; }
+}
+
+/* Efectos al pasar el mouse */
+.music-control-princess:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(74, 62, 33, 0.25);
+    background: linear-gradient(135deg, #ffffff 0%, #f7ecc2 50%, #ffffff 100%);
+}
+
+.music-control-princess:active {
+    transform: translateY(-1px);
+}
+
+.music-control-inline:hover {
+    background: #8c6f19;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(74, 62, 33, 0.3);
+}
+
+/* --- ACTUALIZADO: GALERÍA DE FOTOS EN FONDO PLATEADO CLARITO --- */
+.galeria-marfil-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaciado sutil entre las dos fotos */
+    margin: 25px auto;
+    max-width: 350px; /* Mantiene el tamaño compacto de la foto anterior */
+}
+
+.foto-marfil-wrapper {
+    flex: 1;
+    max-width: 160px; 
+    /* Cambiado a un fondo plateado clarito / gris satinado muy suave */
+    background-color: #f0f2f5; 
+    /* Delicado marco plateado un poco más oscuro para dar definición */
+    border: 1.5px solid #cbd5e1; 
+    border-radius: 6px;
+    padding: 4px;
+    box-shadow: 0 4px 12px rgba(148, 163, 184, 0.12); /* Sombra suave adaptada al tono */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foto-marfil {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: contain; 
-    transition: transform 0.5s ease;
+    object-fit: cover;
+    /* Mantiene la magia: vuelve transparente el fondo blanco original */
+    mix-blend-mode: multiply; 
 }
 
-.photo-container:hover .photo-quinceanera {
-    transform: scale(1.02);
+/* Ajuste fino para pantallas muy pequeñas de celulares */
+@media (max-width: 480px) {
+    .galeria-marfil-container {
+        max-width: 280px;
+        gap: 10px;
+    }
+    .foto-marfil-wrapper {
+        max-width: 130px;
+    }
+}
+/* Ajuste fino para pantallas muy pequeñas de celulares */
+@media (max-width: 480px) {
+    .galeria-marfil-container {
+        max-width: 280px;
+        gap: 10px;
+    }
+    .foto-marfil-wrapper {
+        max-width: 130px;
+    }
 }
 
 .frase {
-    font-size: 18px;
-    color: #e0e0e0;
-    text-align: center;
-    margin: 30px 20px;
-    font-style: italic;
-}
-
-.info-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
-}
-
-.info-table tr {
-    border-bottom: 1px solid #2a2a2a;
-}
-
-.info-table tr:last-child {
-    border-bottom: none;
-}
-
-.info-table td {
-    padding: 18px 10px;
-    vertical-align: top;
-}
-
-.info-table td.label {
-    font-weight: 600;
-    color: #ebd083;
-    width: 30%;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 1.5px;
-}
-
-.info-table td.value {
-    color: #e5e5e5;
-    font-size: 15px;
-}
-
-/* BOTONES CHIC BEIGE */
-.btn {
-    display: inline-block;
-    background: linear-gradient(135deg, #f5ecd7 0%, #e3d5b8 100%);
-    color: #111111;
-    padding: 12px 24px;
-    text-decoration: none;
+    font-size: 16px;
+    color: #4a3e21;
     font-weight: bold;
-    font-size: 13px;
-    border-radius: 6px;
+    margin: 35px auto;
+    max-width: 85%;
+    line-height: 1.8;
+}
+
+/* --- SISTEMA DE ACORDEONES DESPLEGABLES --- */
+/* --- ACTUALIZADO: SISTEMA DE ACORDEONES INTEGRADO AL FONDO DORADO --- */
+.acordeon-container {
+    margin: 40px 0;
+    text-align: left;
+    border-top: 1px solid rgba(122, 94, 19, 0.3); /* Línea divisoria sutil en oro quemado */
+}
+
+.acordeon-item {
+    border-bottom: 1px solid rgba(122, 94, 19, 0.3);
+}
+
+.acordeon-header {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 22px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 10px;
-    border: 1px solid #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    color: #332b14; /* Tono oscuro sofisticado */
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.btn:hover {
-    transform: translateY(-2px);
-    background: linear-gradient(135deg, #ffffff 0%, #f5ecd7 100%);
-    box-shadow: 0 6px 18px rgba(235, 208, 131, 0.4);
+.acordeon-header:hover {
+    color: #7a5e13;
+    padding-left: 14px; /* Sutil efecto dinámico al pasar el cursor */
 }
 
-.btn-confirmar {
-    padding: 15px 40px;
+.acordeon-header .icon {
+    font-size: 18px;
+    color: #7a5e13;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+/* ELIMINADO EL FONDO BLANCO: Ahora el contenido flota directamente sobre el dorado */
+.acordeon-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    background: transparent; /* Totalmente integrado al fondo general */
+}
+
+.acordeon-content p {
+    margin: 0;
+    padding: 0px 15px 24px 15px; /* Espaciado refinado */
     font-size: 15px;
-    margin-top: 25px;
+    color: #4a3e21;
+    line-height: 1.8;
 }
 
-.highlight-text {
-    color: #ebd083;
+/* Clases de apoyo con colores adaptados para máxima legibilidad sobre dorado */
+.secundario {
+    font-size: 14px;
+    color: #5c4e26 !important;
+    margin-top: 6px !important;
+    display: block;
+}
+
+.destacado {
+    color: #2b2207 !important; /* Mayor peso visual */
     font-weight: bold;
 }
 
-.alert-text {
-    color: #ff8585;
+.alerta {
+    color: #941b1b !important; /* Rojo elegante quemado, perfectamente legible */
     font-weight: bold;
+    margin-top: 12px !important;
+}
+
+.btn-link {
     display: inline-block;
-    margin-top: 8px;
+    margin-top: 12px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    color: #332b14;
+    text-decoration: none;
+    border-bottom: 1px dashed #332b14;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
+.btn-link:hover {
+    color: #7a5e13;
+    border-bottom
+}
+
+.acordeon-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Eliminado el fondo blanco; se deja un velo dorado transparente ultra sutil */
+    background-color: rgba(255, 252, 240, 0.2); 
+}
+
+.acordeon-content p {
+    margin: 0;
+    /* Ajustado el espaciado interno para que se vea más limpio al abrirse */
+    padding: 10px 15px 20px 15px;
+    font-size: 15px;
+    color: #332b14; /* Un tono marrón oscuro/quemado para máxima legibilidad */
+}
+
+/* Color para los enlaces dentro de los detalles (como el mapa) */
+.btn-link {
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    color: #7a5e13;
+    text-decoration: none;
+    border-bottom: 1px dashed #7a5e13;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-link:hover {
+    color: #332b14;
+    border-bottom-color: #332b14;
+}
+
+/* Clases de apoyo */
+.secundario {
+    font-size: 14px;
+    color: #665529 !important;
+    margin-top: 5px !important;
+}
+
+.destacado {
+    color: #7a5e13 !important;
+    font-weight: bold;
+}
+
+.alerta {
+    color: #a62424 !important;
+    font-weight: bold;
+    margin-top: 10px !important;
+}
+
+.btn-link {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    color: #7a5e13;
+    text-decoration: none;
+    border-bottom: 1px dashed #7a5e13;
+    font-size: 14px;
+}
+
+.btn-link:hover {
+    color: #332b14;
+    border-bottom-color: #332b14;
+}
+
+/* --- SECCIÓN DE CONFIRMACIÓN & BOTÓN PRINCIPAL --- */
 .confirmacion-section {
-    text-align: center;
-    padding: 10px 20px;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px double #b89535;
+}
+
+.confirmacion-section p {
+    font-size: 15px;
+    color: #332b14;
+    margin-bottom: 20px;
 }
 
 .nota {
+    font-size: 13px !important;
+    color: #665529 !important;
+    font-style: italic;
+}
+
+.btn-principal {
+    display: inline-block;
+    background: #332b14; 
+    color: #ffffff;
+    padding: 14px 45px;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    box-shadow: 0 4px 15px rgba(74, 62, 33, 0.2);
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn-principal:hover {
+    background: #7a5e13;
+    box-shadow: 0 6px 20px rgba(122, 94, 19, 0.4);
+    transform: translateY(-1px);
+}
+
+/* --- CORRECCIÓN DEFINITIVA: BOTONES 100% IDÉNTICOS AL REPRODUCTOR --- */
+
+.btn-princess-mapa, .btn-princess-confirmar {
+    display: inline-flex; /* Convierte el enlace/botón en un bloque contenedor con volumen */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    
+    /* Silueta curva asimétrica idéntica al reproductor */
+    border-radius: 20px 4px 20px 4px; 
     font-size: 13px;
-    color: #ebd083;
-    margin-top: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    /* Fondo Dorado Satinado idéntico para ambos */
+    background: linear-gradient(135deg, #efe2ba 0%, #ffffff 50%, #e0ce96 100%);
+    color: #4a3e21 !important; /* Texto oscuro quemado elegante */
+    border: 1px solid #b89535;
+    outline: 3px double #b89535; /* El doble marco clásico estilo joyería */
+    outline-offset: -6px;
+    padding: 12px 28px;
+    min-width: 240px; /* Ancho estandarizado para que se vean imponentes */
+}
+
+/* Efecto Hover idéntico para mantener la interactividad limpia */
+.btn-princess-mapa:hover, .btn-princess-confirmar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(74, 62, 33, 0.25);
+    background: linear-gradient(135deg, #ffffff 0%, #f7ecc2 50%, #ffffff 100%);
+}
+
+.btn-princess-mapa:active, .btn-princess-confirmar:active {
+    transform: translateY(-1px);
+}
+
+/* Destello luminoso en movimiento que cruza el botón */
+.princess-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    animation: destelloMagico 4s infinite linear;
+}
+
+@keyframes destelloMagico {
+    0% { left: -100%; }
+    30% { left: 150%; }
+    100% { left: 150%; }
+}
+
+/* Ajuste del texto descriptivo de confirmación superior */
+.texto-confirmacion {
+    padding: 0 20px;
+    font-size: 15px;
+    color: #4a3e21;
+    line-height: 1.8;
+    margin-bottom: 25px;
 }
