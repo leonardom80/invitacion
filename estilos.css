@@ -1,27 +1,7 @@
-/* 2. Forzado global con tipografía de respaldo idéntica */
+/* --- CONFIGURACIÓN GLOBAL TIPOGRÁFICA --- */
 * {
     font-family: 'Liberation Sans', 'Ubuntu', sans-serif;
 }  
-
-/* 2. FUENTE CURSIVA DE FANTASÍA PARA LOS TÍTULOS PRINCIPALES */
-/* Cambia 'Great Vibes' por 'Allura' si prefieres trazos un poco más delgados */
-h1, .titulo-quince, .seccion-titulo {
-    font-family: 'Great Vibes', cursive !important;
-    font-weight: normal !important;
-    text-transform: none !important; /* IMPORTANTE: Las cursivas se leen mal en mayúsculas sostenidas */
-    font-size: 42px !important; /* Al ser cursiva, suele requerir un tamaño un poco más grande */
-    letter-spacing: 1px !important;
-}
-
-.acordeon-titulo {
-    /* Cambia 'Cinzel' por 'Playfair Display' si prefieres que sea cursiva inclinada */
-    font-family: 'Cinzel', serif !important; 
-    font-weight: 700 !important; /* Negrita elegante */
-    text-transform: uppercase !important; /* En Cinzel, las mayúsculas se ven hermosas */
-    font-size: 16px !important; /* Tamaño compacto y preciso */
-    letter-spacing: 2px !important; /* Espaciado sutil entre letras de joyería */
-    color: #4a3e21 !important; /* Tono oro quemado oscuro */
-}
 
 body {
     background: radial-gradient(circle, #fffdf0 0%, #f7ecc2 60%, #dec273 100%);
@@ -34,8 +14,35 @@ body {
     min-height: 100vh;
 }
 
+/* --- TÍTULOS PRINCIPALES (Fantasía Cursiva) --- */
+h1, .titulo-quince, .seccion-titulo {
+    font-family: 'Great Vibes', cursive !important;
+    font-weight: normal !important;
+    text-transform: none !important;
+    font-size: 46px !important;
+    letter-spacing: 1px !important;
+}
 
-/* --- ESTRELLAS DESTELLANTES (DORADO SUTIL) --- */
+h2 {
+    font-size: 22px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    color: #7a5e13;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+/* --- TÍTULOS DE LOS ACORDEONES (Elegancia Cinzel) --- */
+.acordeon-titulo {
+    font-family: 'Cinzel', serif !important; 
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    font-size: 16px !important;
+    letter-spacing: 2px !important;
+    color: #4a3e21 !important;
+}
+
+/* --- ESTRELLAS DESTELLANTES --- */
 .starfield {
     position: fixed;
     top: 0;
@@ -69,25 +76,20 @@ body {
     100% { transform: translateY(110vh); opacity: 0; }
 }
 
-/* --- ACTUALIZADO: CONTENEDOR CON FONDO DORADO PREMIUM --- */
+/* --- CONTENEDOR PRINCIPAL TARJETA --- */
 .container {
     position: relative;
     z-index: 1;
     max-width: 600px;
     margin: 60px auto;
     padding: 40px 30px;
-    
-    /* Reemplazado el fondo blanco por un degradado dorado oro/champán texturizado */
     background: linear-gradient(135deg, #fffcf0 0%, #f7e9b8 50%, #e6cb7e 100%);
-    
-    border-radius: 0px; 
     box-shadow: 0 20px 50px rgba(74, 62, 33, 0.25);
     border: 1px solid #cfa844;
     outline: 12px solid rgba(255, 255, 255, 0.5); 
     text-align: center;
 }
 
-/* --- CABECERA Y TÍTULOS --- */
 header {
     margin-bottom: 25px;
 }
@@ -112,16 +114,7 @@ header h1 {
     -webkit-text-fill-color: transparent;
 }
 
-h2 {
-    font-size: 22px;
-    font-weight: normal;
-    letter-spacing: 2px;
-    color: #7a5e13;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-}
-
-/* --- ACTUALIZADO: CONTENEDOR Y BOTÓN "ESCUCHA MI CANCIÓN" ENCIMA DE LA FOTO --- */
+/* --- BLOQUE DE MÚSICA --- */
 .music-container-block {
     margin: 25px 0;
     text-align: center;
@@ -131,18 +124,16 @@ h2 {
 .music-control-princess {
     background: linear-gradient(135deg, #efe2ba 0%, #ffffff 50%, #e0ce96 100%);
     color: #4a3e21;
-    /* Silueta curva y estilizada de fantasía */
     border-radius: 20px 4px 20px 4px; 
     border: 1px solid #b89535;
-    /* Doble línea decorativa que simula joyería */
     outline: 3px double #b89535;
     outline-offset: -6px;
     padding: 12px 32px;
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Playfair Display', serif !important;
+    font-style: italic;
     font-size: 14px;
     font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    letter-spacing: 1px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -153,30 +144,10 @@ h2 {
     gap: 8px;
 }
 
-/* Iconos de destellos laterales */
 .tiara-icon {
     font-size: 12px;
     color: #a6821c;
     animation: pulsoDestello 2s infinite ease-in-out;
-}
-
-/* Efecto mágico de resplandor de fondo */
-.princess-glow {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
-    transform: skewX(-25deg);
-    animation: destelloMagico 4s infinite linear;
-}
-
-/* Animaciones de fantasía */
-@keyframes destelloMagico {
-    0% { left: -100%; }
-    30% { left: 150%; }
-    100% { left: 150%; }
 }
 
 @keyframes pulsoDestello {
@@ -184,42 +155,29 @@ h2 {
     50% { transform: scale(1.3); opacity: 1; color: #7a5e13; }
 }
 
-/* Efectos al pasar el mouse */
 .music-control-princess:hover {
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 10px 25px rgba(74, 62, 33, 0.25);
     background: linear-gradient(135deg, #ffffff 0%, #f7ecc2 50%, #ffffff 100%);
 }
 
-.music-control-princess:active {
-    transform: translateY(-1px);
-}
-
-.music-control-inline:hover {
-    background: #8c6f19;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 15px rgba(74, 62, 33, 0.3);
-}
-
-/* --- ACTUALIZADO: GALERÍA DE FOTOS EN FONDO PLATEADO CLARITO --- */
+/* --- GALERÍA DE FOTOS (Fondo Satín) --- */
 .galeria-marfil-container {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Espaciado sutil entre las dos fotos */
+    gap: 15px;
     margin: 25px auto;
-    max-width: 350px; /* Mantiene el tamaño compacto de la foto anterior */
+    max-width: 350px;
 }
 
 .foto-marfil-wrapper {
     flex: 1;
     max-width: 160px; 
-    /* Cambiado a un fondo plateado clarito / gris satinado muy suave */
     background-color: #f0f2f5; 
-    /* Delicado marco plateado un poco más oscuro para dar definición */
     border: 1.5px solid #cbd5e1; 
     border-radius: 6px;
     padding: 4px;
-    box-shadow: 0 4px 12px rgba(148, 163, 184, 0.12); /* Sombra suave adaptada al tono */
+    box-shadow: 0 4px 12px rgba(148, 163, 184, 0.12);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -231,29 +189,7 @@ h2 {
     height: auto;
     display: block;
     object-fit: cover;
-    /* Mantiene la magia: vuelve transparente el fondo blanco original */
     mix-blend-mode: multiply; 
-}
-
-/* Ajuste fino para pantallas muy pequeñas de celulares */
-@media (max-width: 480px) {
-    .galeria-marfil-container {
-        max-width: 280px;
-        gap: 10px;
-    }
-    .foto-marfil-wrapper {
-        max-width: 130px;
-    }
-}
-/* Ajuste fino para pantallas muy pequeñas de celulares */
-@media (max-width: 480px) {
-    .galeria-marfil-container {
-        max-width: 280px;
-        gap: 10px;
-    }
-    .foto-marfil-wrapper {
-        max-width: 130px;
-    }
 }
 
 .frase {
@@ -266,11 +202,10 @@ h2 {
 }
 
 /* --- SISTEMA DE ACORDEONES DESPLEGABLES --- */
-/* --- ACTUALIZADO: SISTEMA DE ACORDEONES INTEGRADO AL FONDO DORADO --- */
 .acordeon-container {
     margin: 40px 0;
     text-align: left;
-    border-top: 1px solid rgba(122, 94, 19, 0.3); /* Línea divisoria sutil en oro quemado */
+    border-top: 1px solid rgba(122, 94, 19, 0.3);
 }
 
 .acordeon-item {
@@ -285,23 +220,12 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Didact Gothic', sans-serif;
-    font-size: 16px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #332b14; /* Tono oscuro sofisticado */
     cursor: pointer;
     transition: all 0.3s ease;
-
-    /* Convierte de MAYÚSCULAS a formato de lectura suave y elegante */
-    text-transform: none !important; 
-    
-    letter-spacing: 1px !important;
 }
 
 .acordeon-header:hover {
-    color: #7a5e13;
-    padding-left: 14px; /* Sutil efecto dinámico al pasar el cursor */
+    padding-left: 14px;
 }
 
 .acordeon-header .icon {
@@ -311,98 +235,26 @@ h2 {
     transition: transform 0.3s ease;
 }
 
-/* ELIMINADO EL FONDO BLANCO: Ahora el contenido flota directamente sobre el dorado */
 .acordeon-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    background: transparent; /* Totalmente integrado al fondo general */
-}
-
-.acordeon-content p {
-    margin: 0;
-    padding: 0px 15px 24px 15px; /* Espaciado refinado */
-    font-size: 15px;
-    color: #4a3e21;
-    line-height: 1.8;
-}
-
-/* Clases de apoyo con colores adaptados para máxima legibilidad sobre dorado */
-.secundario {
-    font-size: 14px;
-    color: #5c4e26 !important;
-    margin-top: 6px !important;
-    display: block;
-}
-
-.destacado {
-    color: #2b2207 !important; /* Mayor peso visual */
-    font-weight: bold;
-}
-
-.alerta {
-    color: #941b1b !important; /* Rojo elegante quemado, perfectamente legible */
-    font-weight: bold;
-    margin-top: 12px !important;
-}
-
-.btn-link {
-    display: inline-block;
-    margin-top: 12px;
-    margin-left: 15px;
-    margin-bottom: 15px;
-    color: #332b14;
-    text-decoration: none;
-    border-bottom: 1px dashed #332b14;
-    font-size: 14px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.btn-link:hover {
-    color: #7a5e13;
-    border-bottom
-}
-
-.acordeon-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    /* Eliminado el fondo blanco; se deja un velo dorado transparente ultra sutil */
     background-color: rgba(255, 252, 240, 0.2); 
 }
 
 .acordeon-content p {
     margin: 0;
-    /* Ajustado el espaciado interno para que se vea más limpio al abrirse */
     padding: 10px 15px 20px 15px;
     font-size: 15px;
-    color: #332b14; /* Un tono marrón oscuro/quemado para máxima legibilidad */
-}
-
-/* Color para los enlaces dentro de los detalles (como el mapa) */
-.btn-link {
-    display: inline-block;
-    margin-top: 5px;
-    margin-left: 15px;
-    margin-bottom: 15px;
-    color: #7a5e13;
-    text-decoration: none;
-    border-bottom: 1px dashed #7a5e13;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-
-.btn-link:hover {
     color: #332b14;
-    border-bottom-color: #332b14;
 }
 
-/* Clases de apoyo */
+/* Clases de utilidad para contenido interno */
 .secundario {
     font-size: 14px;
     color: #665529 !important;
     margin-top: 5px !important;
+    display: block;
 }
 
 .destacado {
@@ -414,77 +266,35 @@ h2 {
     color: #a62424 !important;
     font-weight: bold;
     margin-top: 10px !important;
+    display: block;
 }
 
-.btn-link {
-    display: inline-block;
-    margin-top: 10px;
-    margin-left: 15px;
-    margin-bottom: 20px;
-    color: #7a5e13;
-    text-decoration: none;
-    border-bottom: 1px dashed #7a5e13;
-    font-size: 14px;
-}
-
-.btn-link:hover {
-    color: #332b14;
-    border-bottom-color: #332b14;
-}
-
-/* --- SECCIÓN DE CONFIRMACIÓN & BOTÓN PRINCIPAL --- */
-.confirmacion-section {
+/* --- SECCIÓN DE CONFIRMACIÓN & BOTONES PREMIUM --- */
+.confirmacion-container {
     margin-top: 50px;
     padding-top: 30px;
     border-top: 1px double #b89535;
 }
 
-.confirmacion-section p {
+.texto-confirmacion {
+    padding: 0 20px;
     font-size: 15px;
-    color: #332b14;
-    margin-bottom: 20px;
+    color: #4a3e21;
+    line-height: 1.8;
+    margin-bottom: 25px;
 }
-
-.nota {
-    font-size: 13px !important;
-    color: #665529 !important;
-    font-style: italic;
-}
-
-.btn-principal {
-    display: inline-block;
-    background: #332b14; 
-    color: #ffffff;
-    padding: 14px 45px;
-    text-decoration: none;
-    font-size: 14px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-radius: 2px;
-    box-shadow: 0 4px 15px rgba(74, 62, 33, 0.2);
-    transition: all 0.3s ease;
-    margin-top: 15px;
-}
-
-.btn-principal:hover {
-    background: #7a5e13;
-    box-shadow: 0 6px 20px rgba(122, 94, 19, 0.4);
-    transform: translateY(-1px);
-}
-
-/* --- CORRECCIÓN DEFINITIVA: BOTONES 100% IDÉNTICOS AL REPRODUCTOR --- */
 
 .btn-princess-mapa, .btn-princess-confirmar {
-    display: inline-flex; /* Convierte el enlace/botón en un bloque contenedor con volumen */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    
-    /* Silueta curva asimétrica idéntica al reproductor */
     border-radius: 20px 4px 20px 4px; 
-    font-size: 13px;
+    font-family: 'Playfair Display', serif !important;
+    font-style: italic;
+    font-size: 14px !important;
+    letter-spacing: 1px !important;
     font-weight: bold;
-    letter-spacing: 2px;
     text-transform: uppercase;
     text-decoration: none !important;
     cursor: pointer;
@@ -492,29 +302,22 @@ h2 {
     overflow: hidden;
     box-sizing: border-box;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-    /* Fondo Dorado Satinado idéntico para ambos */
     background: linear-gradient(135deg, #efe2ba 0%, #ffffff 50%, #e0ce96 100%);
-    color: #4a3e21 !important; /* Texto oscuro quemado elegante */
+    color: #4a3e21 !important;
     border: 1px solid #b89535;
-    outline: 3px double #b89535; /* El doble marco clásico estilo joyería */
+    outline: 3px double #b89535;
     outline-offset: -6px;
     padding: 12px 28px;
-    min-width: 240px; /* Ancho estandarizado para que se vean imponentes */
+    min-width: 240px;
 }
 
-/* Efecto Hover idéntico para mantener la interactividad limpia */
 .btn-princess-mapa:hover, .btn-princess-confirmar:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(74, 62, 33, 0.25);
     background: linear-gradient(135deg, #ffffff 0%, #f7ecc2 50%, #ffffff 100%);
 }
 
-.btn-princess-mapa:active, .btn-princess-confirmar:active {
-    transform: translateY(-1px);
-}
-
-/* Destello luminoso en movimiento que cruza el botón */
+/* Destello animado interno de los botones */
 .princess-glow {
     position: absolute;
     top: 0;
@@ -532,17 +335,44 @@ h2 {
     100% { left: 150%; }
 }
 
-/* Ajuste del texto descriptivo de confirmación superior */
-.texto-confirmacion {
-    padding: 0 20px;
-    font-size: 15px;
-    color: #4a3e21;
-    line-height: 1.8;
-    margin-bottom: 25px;
+/* --- FOOTER (PIE DE PÁGINA) --- */
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    margin: 40px auto 20px auto;
+    max-width: 600px;
+    box-sizing: border-box;
 }
-.btn-princess-mapa, .btn-princess-confirmar {
-    font-family: 'Playfair Display', serif !important;
-    font-style: italic; /* Le da un toque inclinado súper elegante sin perder legibilidad */
-    font-size: 14px !important;
-    letter-spacing: 1px !important;
+
+.footer-divider {
+    color: #dec273;
+    font-size: 11px;
+    letter-spacing: 6px;
+    margin-bottom: 12px;
+    opacity: 0.7;
+}
+
+.site-footer p {
+    font-family: 'Cinzel', serif !important;
+    font-size: 10px !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #7a6a43;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 480px) {
+    .galeria-marfil-container {
+        max-width: 280px;
+        gap: 10px;
+    }
+    .foto-marfil-wrapper {
+        max-width: 130px;
+    }
+    .site-footer p {
+        font-size: 9px !important;
+        line-height: 1.5;
+    }
 }

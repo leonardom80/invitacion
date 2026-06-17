@@ -6,9 +6,8 @@
     <title>Mis 15 Años</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="estilos.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@500;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
@@ -19,8 +18,6 @@
         <div class="meteor m4"></div>
         <div class="meteor m5"></div>
         <div class="meteor m6"></div>
-        <div class="meteor m7"></div>
-        <div class="meteor m8"></div>
     </div>
 
     <audio id="musica-fondo" loop>
@@ -35,7 +32,6 @@
             <h1>Mis 15 Años</h1>
         </header>
 
-       <!-- ACTUALIZADO: Botón con diseño estilo princesa encima de la foto -->
         <div class="music-container-block">
             <button class="music-control-princess" id="btn-musica" onclick="controlarMusica()">
                 <span class="tiara-icon">✦</span>
@@ -45,7 +41,6 @@
             </button>
         </div>
         
- <!-- CONTENEDOR DE FOTOS PRINCIPALES EN MARFIL -->
         <div class="galeria-marfil-container">
             <div class="foto-marfil-wrapper">
                 <img src="1.jpeg" alt="Juliana - Foto Infantil 1" class="foto-marfil">
@@ -57,13 +52,11 @@
 
         <p class="frase">"Un día lleno de ilusiones, el comienzo de una nueva etapa que deseo compartir con las personas que más quiero."</p>
 
-        <!-- SECCIÓN DE DETALLES INTEGRADA AL FONDO DORADO -->
         <div class="acordeon-container">
             
-            <!-- Bloque 1: Fecha y Hora -->
             <div class="acordeon-item">
                 <button class="acordeon-header" onclick="toggleAcordeon(this)">
-                    <span class="acordeon-titulo" >Fecha y Hora</span>
+                    <span class="acordeon-titulo">Fecha y Hora</span>
                     <span class="icon">+</span>
                 </button>
                 <div class="acordeon-content">
@@ -72,7 +65,6 @@
                 </div>
             </div>
 
-            <!-- Bloque 2: Lugar y Ubicación -->
             <div class="acordeon-item">
                 <button class="acordeon-header" onclick="toggleAcordeon(this)">
                     <span class="acordeon-titulo">Lugar y Ubicación</span>
@@ -93,7 +85,6 @@
                 </div>
             </div>
 
-            <!-- Bloque 3: Parqueadero -->
             <div class="acordeon-item">
                 <button class="acordeon-header" onclick="toggleAcordeon(this)">
                     <span class="acordeon-titulo">Parqueadero</span>
@@ -106,7 +97,6 @@
                 </div>
             </div>
 
-            <!-- Bloque 4: Código de Vestimenta -->
             <div class="acordeon-item">
                 <button class="acordeon-header" onclick="toggleAcordeon(this)">
                     <span class="acordeon-titulo">Código de Vestimenta</span>
@@ -120,7 +110,6 @@
                 </div>
             </div>
 
-            <!-- Bloque 5: Lluvia de Sobres / Obsequios -->
             <div class="acordeon-item">
                 <button class="acordeon-header" onclick="toggleAcordeon(this)">
                     <span class="acordeon-titulo">Obsequios</span>
@@ -133,10 +122,10 @@
 
         </div>
 
-        <div class="confirmacion-container" style="text-align: center; margin: 40px 0;">
+        <div class="confirmacion-container">
             <p class="texto-confirmacion">Hay momentos inolvidables que se atesoran en el corazón para siempre, por eso me gustaría que compartas conmigo este día tan especial. Por favor ayúdame confirmando tu asistencia para poder reservar tu lugar.</p>
             
-            <a href="#" class="btn-princess-confirmar" id="btn-confirmar" onclick="confirmarAsistencia(); return false;">
+            <a href="#" class="btn-princess-confirmar" id="btn-confirmar">
                 <span class="tiara-icon">✦</span>
                 Confirmar Asistencia
                 <span class="tiara-icon">✦</span>
@@ -145,6 +134,11 @@
         </div>
 
     </div>
+
+    <footer class="site-footer">
+        <div class="footer-divider">✦ ✦ ✦</div>
+        <p>&copy; 2026 Ingeniero Andrés Molina. Todos los derechos reservados.</p>
+    </footer>
 
     <script>
         // Lógica de los Acordeones Desplegables
@@ -175,13 +169,11 @@
             }
         }
 
-        // Control de Audio Inteligente e Interactivo
+        // Control de Audio
         var audio = document.getElementById('musica-fondo');
         var icono = document.getElementById('icono-musica');
-        var btn = document.getElementById('btn-musica');
         var yaInteractuo = false; 
 
-    
         window.addEventListener('scroll', activarAudioAutomatico);
         window.addEventListener('touchstart', activarAudioAutomatico); 
         document.body.addEventListener('click', activarAudioAutomatico);
@@ -191,13 +183,14 @@
             window.removeEventListener('touchstart', activarAudioAutomatico);
             document.body.removeEventListener('click', activarAudioAutomatico);
         }
-    function activarAudioAutomatico() {
+
+        function activarAudioAutomatico() {
             if (yaInteractuo) return; 
             audio.play().then(() => {
                 icono.innerHTML = "Pausar mi canción";
                 yaInteractuo = true;
                 removerEventos(); 
-            }).catch(error => { console.log("Interacción requerida..."); });
+            }).catch(error => { console.log("Interacción requerida para audio..."); });
         }
 
         function controlarMusica() {
@@ -212,6 +205,5 @@
             }
         }
     </script>
-
 </body>
 </html>
