@@ -193,7 +193,6 @@ body {
     width: 250px;
     height: auto;
     margin-bottom: 5px;
-    /* mix-blend-mode eliminado porque la imagen ya no tiene fondo */
 }
 
 .hero-foto {
@@ -204,7 +203,6 @@ body {
 
 .hero-p4 {
     font-size: 110px;
-    /* line-height: 1; */
     position: relative;
     margin-top: 10px;
     text-align: center;
@@ -265,7 +263,6 @@ body {
 
 .icon-img {
     width: 55px;
-    /* Íconos más grandes */
     height: auto;
     object-fit: contain;
 }
@@ -279,7 +276,6 @@ body {
     width: 55px;
     height: 55px;
     flex-shrink: 0;
-    /* Evita que se encojan en el flex container */
 }
 
 .btn-ubicacion {
@@ -319,7 +315,6 @@ body {
     max-width: 200px;
 }
 
-/* Texto más grande */
 .scroll3-p5 {
     font-size: 20px;
     font-weight: bold;
@@ -397,7 +392,6 @@ body {
     width: 40px;
     height: auto;
     mix-blend-mode: multiply;
-    /* Elimina fondo blanco */
 }
 
 /* Control audio y scroll indicator */
@@ -449,26 +443,19 @@ body {
 }
 
 @keyframes bounce {
-
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
+    0%, 20%, 50%, 80%, 100% {
         transform: translate(-50%, 0);
     }
-
     40% {
         transform: translate(-50%, -10px);
     }
-
     60% {
         transform: translate(-50%, -5px);
     }
 }
 
 /* ============================================================
-   RESPONSIVE — MÓVIL (max-width: 600px)
+   RESPONSIVE — MÓVIL (max-width: 600px) - OPTIMIZADO
    ============================================================ */
 @media (max-width: 600px) {
 
@@ -484,168 +471,170 @@ body {
         height: 100vh;
     }
 
-    /* ─────────────────────────────────────────────
-       Sección de 150vh: el celular muestra solo los
-       primeros 100vh. Si usamos justify-content:center
-       el contenido queda al 75% → parte baja de la pantalla.
-       Usamos flex-start + padding-top para colocar
-       el contenido en el tercio superior del viewport.
-    ───────────────────────────────────────────── */
+    /* Ajuste de centralización exacta en el fondo para pantallas móviles */
     .snap-section {
-        height: 150vh;
-        padding: 18vh 25px 40px;
-        /* padding-top empuja contenido al centro visual del viewport */
-        background-size: cover;
+        height: 100dvh !important;
+        height: 100vh !important;
+        padding: 40px 24px;
+        background-size: 100% 100%;
         background-position: center center;
         overflow: hidden;
-        justify-content: flex-start;
-        /* contenido desde arriba, controlado por padding-top */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
 
     /* ---- PANTALLA INICIAL ---- */
     .hero-p1 {
-        font-size: 13px;
-        letter-spacing: 3px;
+        font-size: 18px;
+        letter-spacing: 4px;
+        margin-bottom: 8px;
     }
 
     .hero-p2 {
-        font-size: 36px;
-        margin-bottom: 10px;
+        font-size: 42px;
+        margin-bottom: 15px;
     }
 
     .hero-foto-container {
-        width: 210px;
+        width: 220px;
     }
 
     .hero-p4 {
-        font-size: 82px;
+        font-size: 96px;
+        margin-top: 5px;
     }
 
     /* ---- SCROLL 1 ---- */
     .scroll1-content {
         max-width: 100%;
-        gap: 16px;
+        gap: 20px;
         padding: 0;
     }
 
     .scroll1-p1 {
-        font-size: 17px;
-        line-height: 1.7;
+        font-size: 19px;
+        line-height: 1.6;
     }
 
     .scroll1-p2 {
-        font-size: 26px;
+        font-size: 32px;
         line-height: 1.4;
     }
 
     .scroll1-p3 {
-        font-size: 17px;
+        font-size: 19px;
     }
 
     /* ---- SCROLL 2 ---- */
     .scroll2-content {
         max-width: 100%;
-        gap: 14px;
+        gap: 18px;
         padding: 0;
     }
 
     .scroll2-p1 {
-        font-size: 24px;
-        margin-bottom: 4px;
+        font-size: 26px;
+        margin-bottom: 8px;
     }
 
     .icon-row {
-        gap: 14px;
+        gap: 16px;
     }
 
     .icon-img {
-        width: 44px;
+        width: 48px;
         flex-shrink: 0;
     }
 
-    .btn-ubicacion {
-        font-size: 15px;
-        padding: 10px 24px;
+    .icon-row p {
+        font-size: 16px !important;
+        line-height: 1.4;
     }
 
-    /* ---- SCROLL 3 ---- */
+    .btn-ubicacion {
+        font-size: 16px;
+        padding: 12px 28px;
+    }
+
+    /* ---- SCROLL 3 (DRESS CODE) ---- */
     .scroll3-content {
         max-width: 100%;
-        gap: 14px;
+        gap: 18px;
         padding: 0;
     }
 
     .scroll3-p1 {
-        font-size: 26px;
+        font-size: 32px;
     }
 
     .scroll3-p2 {
-        font-size: 22px;
+        font-size: 26px;
     }
 
     .scroll3-p3-p4 {
-        font-size: 17px;
-        max-width: 170px;
+        font-size: 18px;
+        max-width: 220px;
     }
 
     .scroll3-p5 {
-        font-size: 18px;
-        margin-top: 8px;
+        font-size: 20px;
+        margin-top: 10px;
     }
 
     .scroll3-p6 {
-        font-size: 16px;
+        font-size: 17px;
         line-height: 1.6;
     }
 
     /* ---- SCROLL 4 ---- */
     .scroll4-content {
         max-width: 100%;
-        gap: 12px;
+        gap: 16px;
         padding: 0;
     }
 
     .scroll4-p1 {
-        font-size: 16px;
+        font-size: 17px;
         line-height: 1.6;
     }
 
     .btn-confirm {
-        font-size: 16px;
-        padding: 13px 28px;
+        font-size: 17px;
+        padding: 14px 32px;
     }
 
     .time-box span {
-        font-size: 30px;
+        font-size: 34px;
     }
 
     .time-box p {
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .countdown-container {
-        gap: 8px;
-        margin: 4px 0;
+        gap: 12px;
+        margin: 8px 0;
     }
 
     .regalos-container {
-        gap: 10px;
-        margin-top: 8px;
+        gap: 12px;
+        margin-top: 12px;
     }
 
     .regalo-icon {
-        width: 32px;
+        width: 36px;
     }
 
     /* ---- BOTÓN DE MÚSICA ---- */
     .music-container-block {
-        bottom: 12px;
-        right: 12px;
+        bottom: 16px;
+        right: 16px;
     }
 
     .music-control-princess {
-        font-size: 11px;
-        padding: 8px 14px;
+        font-size: 12px;
+        padding: 10px 16px;
     }
 }
