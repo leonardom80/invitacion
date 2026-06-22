@@ -42,7 +42,8 @@ body {
 /* --- SECCIONES SNAP --- */
 .snap-section {
     width: 100%;
-    height: 150vh;   /* 50% más alto que la pantalla — el background se ve mucho más grande */
+    height: 150vh;
+    /* 50% más alto que la pantalla — el background se ve mucho más grande */
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
@@ -178,13 +179,13 @@ body {
 }
 
 .hero-p1 {
-    font-size: 14px;
+    font-size: 30px;
     letter-spacing: 4px;
     margin-bottom: 5px;
 }
 
 .hero-p2 {
-    font-size: 45px;
+    font-size: 50px;
     margin-bottom: 20px;
 }
 
@@ -484,18 +485,21 @@ body {
     }
 
     /* ─────────────────────────────────────────────
-       En móvil usamos 100vh para que sección y
-       viewport coincidan exactamente: justify-content
-       center queda perfectamente centrado en pantalla.
+       Sección de 150vh: el celular muestra solo los
+       primeros 100vh. Si usamos justify-content:center
+       el contenido queda al 75% → parte baja de la pantalla.
+       Usamos flex-start + padding-top para colocar
+       el contenido en el tercio superior del viewport.
     ───────────────────────────────────────────── */
     .snap-section {
-        height: 100vh;
-        height: 100dvh;              /* dvh respeta la barra del navegador */
-        padding: 20px 25px;
+        height: 150vh;
+        padding: 18vh 25px 40px;
+        /* padding-top empuja contenido al centro visual del viewport */
         background-size: cover;
         background-position: center center;
         overflow: hidden;
-        justify-content: center;
+        justify-content: flex-start;
+        /* contenido desde arriba, controlado por padding-top */
         align-items: center;
     }
 
