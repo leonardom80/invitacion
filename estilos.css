@@ -200,8 +200,10 @@ body {
 }
 
 .hero-p2 {
-    font-size: 50px;
+    font-size: 100px; /* Ampliado a los 100px solicitados */
     margin-bottom: 20px;
+    padding: 0 10px;  /* Espacio extra a los lados para que no se corte la tipografía cursiva */
+    text-align: center;
 }
 
 .hero-foto-container {
@@ -489,7 +491,7 @@ body {
     .snap-section {
         height: 100dvh !important;
         height: 100vh !important;
-        padding: 40px 15% !important; 
+        padding: 40px 10% !important; 
         background-size: 100% 100%;
         background-position: center center;
         overflow: hidden;
@@ -514,6 +516,8 @@ body {
     .hero-p2 {
         font-size: 16vw;
         margin-bottom: 10px;
+        padding: 0 20px; /* Evita que las colitas de la fuente cursiva toquen el borde de la pantalla */
+        white-space: nowrap; /* Fuerza a que se mantenga en una sola línea si es necesario */
     }
 
     .hero-foto-container {
