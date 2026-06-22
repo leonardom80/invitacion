@@ -484,19 +484,18 @@ body {
     }
 
     /* ─────────────────────────────────────────────
-       Sección de 150vh: el celular muestra solo los
-       primeros 100vh. Si usamos justify-content:center
-       el contenido queda al 75% → parte baja de la pantalla.
-       Usamos flex-start + padding-top para colocar
-       el contenido en el tercio superior del viewport.
+       En móvil usamos 100vh para que sección y
+       viewport coincidan exactamente: justify-content
+       center queda perfectamente centrado en pantalla.
     ───────────────────────────────────────────── */
     .snap-section {
-        height: 150vh;
-        padding: 18vh 25px 40px;     /* padding-top empuja contenido al centro visual del viewport */
+        height: 100vh;
+        height: 100dvh;              /* dvh respeta la barra del navegador */
+        padding: 20px 25px;
         background-size: cover;
         background-position: center center;
         overflow: hidden;
-        justify-content: flex-start; /* contenido desde arriba, controlado por padding-top */
+        justify-content: center;
         align-items: center;
     }
 
