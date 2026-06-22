@@ -514,7 +514,7 @@ body {
     }
 
     .hero-p2 {
-        font-size: 16vw;
+        font-size: 14vw;
         margin-bottom: 10px;
         padding: 0 20px; /* Evita que las colitas de la fuente cursiva toquen el borde de la pantalla */
         white-space: nowrap; /* Fuerza a que se mantenga en una sola línea si es necesario */
