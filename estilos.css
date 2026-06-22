@@ -492,7 +492,7 @@ body {
     ───────────────────────────────────────────── */
     .snap-section {
         height: 150vh;
-        padding: 60px 60px;          /* margen interior amplio para el marco */
+        padding: 40px 25px;          /* padding reducido para dar más espacio al contenido */
         background-size: cover;
         background-position: center center;
         overflow: hidden;            /* el contenido nunca sale del fondo */
@@ -501,21 +501,21 @@ body {
 
     /* ---- PANTALLA INICIAL ---- */
     .hero-p1 {
-        font-size: 10px;
+        font-size: 13px;
         letter-spacing: 3px;
     }
 
     .hero-p2 {
-        font-size: 28px;
+        font-size: 36px;
         margin-bottom: 10px;
     }
 
     .hero-foto-container {
-        width: 160px;
+        width: 210px;
     }
 
     .hero-p4 {
-        font-size: 64px;
+        font-size: 82px;
     }
 
     /* ---- SCROLL 1 ---- */
@@ -526,17 +526,17 @@ body {
     }
 
     .scroll1-p1 {
-        font-size: 14px;
+        font-size: 17px;
         line-height: 1.7;
     }
 
     .scroll1-p2 {
-        font-size: 20px;
+        font-size: 26px;
         line-height: 1.4;
     }
 
     .scroll1-p3 {
-        font-size: 14px;
+        font-size: 17px;
     }
 
     /* ---- SCROLL 2 ---- */
@@ -547,22 +547,22 @@ body {
     }
 
     .scroll2-p1 {
-        font-size: 20px;
+        font-size: 24px;
         margin-bottom: 4px;
     }
 
     .icon-row {
-        gap: 12px;
+        gap: 14px;
     }
 
     .icon-img {
-        width: 36px;
+        width: 44px;
         flex-shrink: 0;
     }
 
     .btn-ubicacion {
-        font-size: 13px;
-        padding: 9px 20px;
+        font-size: 15px;
+        padding: 10px 24px;
     }
 
     /* ---- SCROLL 3 ---- */
@@ -573,26 +573,26 @@ body {
     }
 
     .scroll3-p1 {
-        font-size: 22px;
+        font-size: 26px;
     }
 
     .scroll3-p2 {
-        font-size: 18px;
+        font-size: 22px;
     }
 
     .scroll3-p3-p4 {
-        font-size: 14px;
-        max-width: 140px;
+        font-size: 17px;
+        max-width: 170px;
     }
 
     .scroll3-p5 {
-        font-size: 15px;
+        font-size: 18px;
         margin-top: 8px;
     }
 
     .scroll3-p6 {
-        font-size: 13px;
-        line-height: 1.5;
+        font-size: 16px;
+        line-height: 1.6;
     }
 
     /* ---- SCROLL 4 ---- */
@@ -603,21 +603,21 @@ body {
     }
 
     .scroll4-p1 {
-        font-size: 13px;
-        line-height: 1.55;
+        font-size: 16px;
+        line-height: 1.6;
     }
 
     .btn-confirm {
-        font-size: 14px;
-        padding: 11px 22px;
+        font-size: 16px;
+        padding: 13px 28px;
     }
 
     .time-box span {
-        font-size: 24px;
+        font-size: 30px;
     }
 
     .time-box p {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .countdown-container {
