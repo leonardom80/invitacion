@@ -455,27 +455,26 @@ body {
 }
 
 /* ============================================================
-   RESPONSIVE — MÓVIL (max-width: 600px) - OPTIMIZADO
+   RESPONSIVE — MÓVIL (max-width: 600px) - MARGENES CORREGIDOS
    ============================================================ */
 @media (max-width: 600px) {
 
-    /* El wrapper ocupa todo el ancho en móvil */
     .mobile-wrapper {
         max-width: 100%;
         box-shadow: none;
     }
 
-    /* El scroll container cubre exactamente la pantalla del celular */
     .scroll-container {
         height: 100dvh;
         height: 100vh;
     }
 
-    /* Ajuste de centralización exacta en el fondo para pantallas móviles */
+    /* Reducimos sutilmente el padding superior/inferior si es necesario, 
+       pero aumentamos el padding lateral para encajonar el texto */
     .snap-section {
         height: 100dvh !important;
         height: 100vh !important;
-        padding: 40px 24px;
+        padding: 40px 45px !important; /* Incrementado de 24px a 45px para empujar el texto hacia adentro */
         background-size: 100% 100%;
         background-position: center center;
         overflow: hidden;
@@ -487,154 +486,156 @@ body {
 
     /* ---- PANTALLA INICIAL ---- */
     .hero-p1 {
-        font-size: 18px;
-        letter-spacing: 4px;
+        font-size: 16px; /* Ajuste sutil para evitar saltos de línea */
+        letter-spacing: 3px;
         margin-bottom: 8px;
     }
 
     .hero-p2 {
-        font-size: 42px;
+        font-size: 38px; /* Un poco más compacta para que entre en el marco */
         margin-bottom: 15px;
     }
 
     .hero-foto-container {
-        width: 220px;
+        width: 180px; /* Reducido ligeramente para dar espacio a los textos */
     }
 
     .hero-p4 {
-        font-size: 96px;
+        font-size: 82px; /* Ajustado para que el nombre "Juliana" no toque los bordes */
         margin-top: 5px;
     }
 
-    /* ---- SCROLL 1 ---- */
+    /* ---- SCROLL 1 (La Frase - Ref: Imagen 1000120617) ---- */
     .scroll1-content {
-        max-width: 100%;
-        gap: 20px;
+        max-width: 85%; /* Restringimos el ancho máximo al 85% del área segura */
+        gap: 15px;
         padding: 0;
     }
 
     .scroll1-p1 {
-        font-size: 19px;
-        line-height: 1.6;
+        font-size: 16px; /* Bajó de 19px para que el párrafo no se estire verticalmente de más */
+        line-height: 1.5;
     }
 
     .scroll1-p2 {
-        font-size: 32px;
-        line-height: 1.4;
+        font-size: 28px;
+        line-height: 1.3;
     }
 
     .scroll1-p3 {
-        font-size: 19px;
+        font-size: 17px;
     }
 
-    /* ---- SCROLL 2 ---- */
+    /* ---- SCROLL 2 (Ubicación e Itinerario - Ref: Imagen 1000120618) ---- */
     .scroll2-content {
-        max-width: 100%;
-        gap: 18px;
+        max-width: 90%; /* Forzamos a que todo el bloque de itinerario se cierre */
+        gap: 14px;
         padding: 0;
     }
 
     .scroll2-p1 {
-        font-size: 26px;
-        margin-bottom: 8px;
+        font-size: 24px;
+        margin-bottom: 4px;
     }
 
     .icon-row {
-        gap: 16px;
+        gap: 12px;
+        align-items: flex-start; /* Alinea los iconos arriba por si el texto genera 2 líneas */
     }
 
-    .icon-img {
-        width: 48px;
-        flex-shrink: 0;
+    .icon-img, .icon-brown-mask {
+        width: 38px !important;  /* Reducidos de 48px para que dejen más espacio al texto */
+        height: 38px !important;
     }
 
     .icon-row p {
-        font-size: 16px !important;
+        font-size: 14px !important; /* Bajó de 16px para que las direcciones queden perfectas dentro del marco */
         line-height: 1.4;
     }
 
     .btn-ubicacion {
-        font-size: 16px;
-        padding: 12px 28px;
+        font-size: 14px;
+        padding: 10px 24px;
+        margin-top: 5px;
     }
 
-    /* ---- SCROLL 3 (DRESS CODE) ---- */
+    /* ---- SCROLL 3 (Código de Vestimenta - Ref: Imagen 1000120619) ---- */
     .scroll3-content {
-        max-width: 100%;
-        gap: 18px;
+        max-width: 85%;
+        gap: 14px;
         padding: 0;
     }
 
     .scroll3-p1 {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .scroll3-p2 {
-        font-size: 26px;
+        font-size: 22px;
     }
 
     .scroll3-p3-p4 {
-        font-size: 18px;
-        max-width: 220px;
+        font-size: 16px;
+        max-width: 180px;
     }
 
     .scroll3-p5 {
-        font-size: 20px;
-        margin-top: 10px;
+        font-size: 18px;
+        margin-top: 5px;
     }
 
     .scroll3-p6 {
-        font-size: 17px;
-        line-height: 1.6;
+        font-size: 15px;
+        line-height: 1.5;
     }
 
-    /* ---- SCROLL 4 ---- */
+    /* ---- SCROLL 4 (Contador y Regalos - Ref: Imagen 1000120620) ---- */
     .scroll4-content {
-        max-width: 100%;
-        gap: 16px;
+        max-width: 85%;
+        gap: 12px;
         padding: 0;
     }
 
     .scroll4-p1 {
-        font-size: 17px;
-        line-height: 1.6;
+        font-size: 15px;
+        line-height: 1.5;
     }
 
     .btn-confirm {
-        font-size: 17px;
-        padding: 14px 32px;
+        font-size: 16px;
+        padding: 12px 28px;
     }
 
     .time-box span {
-        font-size: 34px;
+        font-size: 28px; /* Un poco más pequeño para asegurar que no se solapen */
     }
 
     .time-box p {
-        font-size: 13px;
+        font-size: 11px;
     }
 
     .countdown-container {
-        gap: 12px;
-        margin: 8px 0;
+        gap: 10px;
+        margin: 4px 0;
     }
 
     .regalos-container {
-        gap: 12px;
-        margin-top: 12px;
+        gap: 10px;
+        margin-top: 8px;
     }
 
     .regalo-icon {
-        width: 36px;
+        width: 32px;
     }
 
-    /* ---- BOTÓN DE MÚSICA ---- */
+    /* ---- BOTÓN DE MÚSICA FLOTANTE ---- */
     .music-container-block {
-        bottom: 16px;
-        right: 16px;
+        bottom: 12px;
+        right: 12px;
     }
 
     .music-control-princess {
-        font-size: 12px;
-        padding: 10px 16px;
+        font-size: 11px;
+        padding: 8px 14px;
     }
 }
