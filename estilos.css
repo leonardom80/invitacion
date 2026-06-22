@@ -491,19 +491,19 @@ body {
     }
 
     .hero-p1 {
-        font-size: 4vw; /* Fuente fluida según el ancho de pantalla */
+        font-size: 8vw; /* Fuente fluida según el ancho de pantalla */
         letter-spacing: 2px;
         margin-bottom: 5px;
     }
 
     .hero-p2 {
-        font-size: 8vw;
+        font-size: 12vw;
         margin-bottom: 10px;
     }
 
     .hero-foto-container {
-        width: 45vw; /* La foto se escala proporcionalmente */
-        max-width: 180px;
+        width: 60vw; /* La foto se escala proporcionalmente */
+        max-width: 195px;
     }
 
     .hero-p4 {
