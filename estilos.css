@@ -484,19 +484,20 @@ body {
     }
 
     /* ─────────────────────────────────────────────
-       Mantenemos height: 150vh para que la imagen
-       de fondo se vea grande y la transición entre
-       secciones sea suave (igual que en desktop).
-       El padding horizontal grande (60px) mantiene
-       el contenido dentro del marco decorativo.
+       Sección de 150vh: el celular muestra solo los
+       primeros 100vh. Si usamos justify-content:center
+       el contenido queda al 75% → parte baja de la pantalla.
+       Usamos flex-start + padding-top para colocar
+       el contenido en el tercio superior del viewport.
     ───────────────────────────────────────────── */
     .snap-section {
         height: 150vh;
-        padding: 40px 25px;          /* padding reducido para dar más espacio al contenido */
+        padding: 18vh 25px 40px;     /* padding-top empuja contenido al centro visual del viewport */
         background-size: cover;
         background-position: center center;
-        overflow: hidden;            /* el contenido nunca sale del fondo */
-        justify-content: center;
+        overflow: hidden;
+        justify-content: flex-start; /* contenido desde arriba, controlado por padding-top */
+        align-items: center;
     }
 
     /* ---- PANTALLA INICIAL ---- */
