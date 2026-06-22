@@ -502,7 +502,7 @@ body {
     }
 
     .hero-foto-container {
-        width: 60vw; /* La foto se escala proporcionalmente */
+        width: 80vw; /* La foto se escala proporcionalmente */
         max-width: 195px;
     }
 
