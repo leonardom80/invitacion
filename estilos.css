@@ -540,6 +540,7 @@ body {
         width: 100%;
         max-width: 100%;
         gap: 12px;
+        text-align: center;
     }
 
     .scroll2-p1 {
