@@ -491,24 +491,24 @@ body {
     }
 
     .hero-p1 {
-        font-size: 8vw; /* Fuente fluida según el ancho de pantalla */
+        font-size: 4vw; /* Fuente fluida según el ancho de pantalla */
         letter-spacing: 2px;
         margin-bottom: 5px;
     }
 
     .hero-p2 {
-        font-size: 12vw;
+        font-size: 16vw;
         margin-bottom: 10px;
     }
 
     .hero-foto-container {
-        width: 80vw; /* La foto se escala proporcionalmente */
+        width: 100vw; /* La foto se escala proporcionalmente */
         max-width: 195px;
     }
 
     .hero-p4 {
-        font-size: 14vw; /* CORREGIDO: Reducido de 18vw a 14vw para que no se corte en los bordes */
-        width: 100%;
+        font-size: 12vw; /* CORREGIDO: Reducido de 18vw a 14vw para que no se corte en los bordes */
+        width: 90%;
         text-align: center;
         line-height: 1.1;
         word-wrap: break-word;
