@@ -123,6 +123,21 @@ body {
     display: inline-block;
 }
 
+/* Contador */
+.reloj {
+    background: #784419;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.segundos {
+    background: #de9c48;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
 /* --- ANIMACIONES --- */
 .anim-pan-text {
     animation: panTextEffect 8s ease-out forwards;
