@@ -529,7 +529,7 @@ body {
         font-size: 12vw; /* CORREGIDO: Reducido de 18vw a 14vw para que no se corte en los bordes */
         width: 90%;
         text-align: center;
-        line-height: 1.1;
+        /* line-height: 1.1; */
         word-wrap: break-word;
     }
 
