@@ -521,8 +521,8 @@ body {
     }
 
     .hero-foto-container {
-        width: 100vw; /* La foto se escala proporcionalmente */
-        max-width: 195px;
+        width: 200px; /* La foto se escala proporcionalmente */
+        /* max-width: 195px; */
     }
 
     .hero-p4 {
