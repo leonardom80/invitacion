@@ -511,7 +511,7 @@ body {
         font-size: 4vw; /* Fuente fluida según el ancho de pantalla */
         letter-spacing: 2px;
         margin-bottom: 5px;
-        margin-top: 57px;
+        margin-top: 0px;
     }
 
     .hero-p2 {
