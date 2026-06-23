@@ -525,6 +525,12 @@ body {
         /* max-width: 195px; */
     }
 
+    .hero-foto {
+    width: 400px;
+    height: auto;
+    object-fit: contain;
+}
+
     .hero-p4 {
         font-size: 12vw; /* CORREGIDO: Reducido de 18vw a 14vw para que no se corte en los bordes */
         width: 90%;
