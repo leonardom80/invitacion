@@ -529,6 +529,7 @@ body {
     width: 400px;
     height: auto;
     object-fit: contain;
+    margin-left: -90px;
 }
 
     .hero-p4 {
